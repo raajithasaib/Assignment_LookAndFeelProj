@@ -1,0 +1,110 @@
+﻿/* statistics.css */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    background-color: #56bb8a;
+    padding: 10px;
+    gap: 20px;
+}
+
+nav li {
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    nav li img {
+        padding-left: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+    nav a:hover {
+        color: #b9c0bc;
+    }
+
+/* Basic styling for the containers */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.chart-section {
+    flex: 1 1 calc(50% - 40px); /* Adjust the calc() to fit two sections side by side */
+    margin: 20px; /* This margin is taken into account in the calc() above */
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .chart-section {
+        flex-basis: 100%;
+    }
+}
+
+.chart-section h2 {
+    color: #333; /* Dark grey color for headings */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+.insights {
+    font-size: 14px; /* Smaller font size for insight text */
+    color: #666; /* Light grey color for the text */
+    margin-top: 15px; /* Space above the insights text */
+    text-align: left; /* Left-align the insights text */
+}
+
+/* Basic Styling for Footer */
+footer {
+    background-color: #56bb8a;
+    color: #333;
+    padding: 20px 0;
+    font-size: 15px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-section ul,
+.footer-section p {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-section ul li a,
+    .footer-section a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-section ul li a:hover,
+        .footer-section a:hover {
+            color: #007bff;
+        }

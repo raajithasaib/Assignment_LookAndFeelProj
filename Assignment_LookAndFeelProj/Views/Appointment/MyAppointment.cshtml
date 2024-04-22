@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <nav>
+        <ul>
+            <li><img src="@Url.Content("~/img/logo.png")" alt="Logo"></li>
+            <li><a href="@Url.Action("Index", "Account")">Home</a></li>
+            <li><a href="@Url.Action("Index", "Doctor")">Doctors</a></li>
+            <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+            <li><a href="@Url.Action("LogOut", "Account")">Log out</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h2>Appointment Details</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Patient's Name</th>
+            <th>Doctor's Name</th>
+            <th>Department</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Concern</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Appointments)
+        {
+            <tr>
+                <td>@item.PatientName</td>
+                <td>@item.DoctorName</td>
+                <td>@item.Department</td>
+                <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                <td>@item.Time.ToString("h:mm tt")</td>
+                <td>@item.Concern</td>
+                <td class="actions">
+                    <button class="edit-button" onclick="location.href='@Url.Action("Edit", "Appointment", new { id = item.Id })'">Edit</button>
+                    <button class="details-button" onclick="location.href='@Url.Action("Details", "Appointment", new { id = item.Id })'">Details</button>
+                    <button class="delete-button" data-id="@item.Id">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>&copy; 2024 - HealHive LLC</p>
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableBody = document.querySelector('table tbody');
+            tableBody.addEventListener('click', function(event) {
+                if (event.target.className === 'delete-button') {
+                    const confirmation = confirm('Are you sure you want to delete this appointment?');
+                    if (confirmation) {
+                        // Use AJAX to delete the record from the database
+                        var id = event.target.getAttribute('data-id');
+                        fetch('@Url.Action("Delete", "Appointment")', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'RequestVerificationToken': '@Html.AntiForgeryToken()'
+                            },
+                            body: JSON.stringify({ id: id })
+                        }).then(response => response.json())
+                          .then(data => {
+                              if (data.success) {
+                                  const row = event.target.closest('tr');
+                                  row.parentNode.removeChild(row);
+                              } else {
+                                  alert('Error deleting record.');
+                              }
+                          });
+                    }
+                }
+            });
+        });
+    </script>
+}

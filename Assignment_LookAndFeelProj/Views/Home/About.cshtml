@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav>
+    <ul>
+        <li><img src="@Url.Content("~/img/logo.png")" alt="Logo"></li>
+        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+        <li><a href="@Url.Action("Index", "Doctor")">Doctors</a></li>
+        <li><a href="@Url.Action("Index", "Appointment")">Book an appointment</a></li>
+        <li><a href="@Url.Action("Login", "Account")" class="btn btn-login">Login</a></li>
+        <li><a href="@Url.Action("Register", "Account")" class="btn btn-register">Register</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <h1>About Us</h1>
+    <p>At HealHive, We're revolutionizing healthcare, starting with our appointment page. It's not just a scheduling tool, it is your gateway to personalized medical attention. Farewell to endless waiting and welcome to a new era of tailored care. Our commitment goes beyond booking appointments and is about creating compassionate healthcare journeys. Join us at Healhive as we redefine the standard of wellness, one appointment at a time.</p>
+    <h1>Our Team</h1>
+    <div class="team-members">
+        <div class="team-member">
+            <img src="@Url.Content("~/img/bull1.jpg")" alt="Team Member 1">
+            <div class="team-member-info">
+                <h3>Afrah Shaik</h3>
+                <p>Afrah, a student in USF's Business Analytics and Information Systems graduate program, has been pivotal in designing the pages and implementing JavaScript for website functionalities. She designed the login and registration pages.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/img/bull2.jpg")" alt="Team Member 2">
+            <div class="team-member-info">
+                <h3>Raajitha Sai Bondada</h3>
+                <p>Raajitha, a student in USF's Business Analytics and Information Systems graduate program, has played a pivotal role in implementing JavaScripts for various functionalities on the website.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/img/bull3.jpg")" alt="Team Member 3">
+            <div class="team-member-info">
+                <h3>Shwetha Sunkara</h3>
+                <p>Shwetha, a student in USF's Business Analytics and Information Systems graduate program, She has implemented statistics page and CSS to enhance the functionality and visual appeal of the site.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="@Url.Content("~/img/bull4.jpg")" alt="Team Member 4">
+            <div class="team-member-info">
+                <h3>Srija Thota</h3>
+                <p>Srija, a student in USF's Business Analytics and Information Systems graduate program, has made substantial contributions by designing the about page and crafted the data model with precision.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" style="text-align: center;">
+        <h2>Our Data Model</h2>
+        <p>The Data Model shows how our website data is structured to provide insights and functionality effectively:</p>
+        <img src="@Url.Content("~/img/ERD.png")" alt="Data Model of the Website" style="width:100%; max-width:600px;">
+    </div>
+    <div class="section" style="text-align: center;">
+        <h2>Our GitHub Repository</h2>
+        <p>Our project is open-source, and we encourage collaboration:</p>
+        <a href="https://github.com/raajithasaib/Assignment_LookAndFeel.git">Visit our GitHub Repository</a>
+    </div>
+</div>
+<br>
+<br>
+<div class="git">
+    <h2> Git Log</h2> <br>
+    <p>This section presents the output of the following terminal command for each group member.</p>
+    <br> <p>git log --author="githubID" --pretty=tformat: --numstat </p>
+    <div class="gitimages">
+        <h2>Afrah</h2>
+        <img src="@Url.Content("~/img/git_Afrah.png")" width="500px" height="400px"> <br>
+        <h2>Raajitha</h2>
+        <img src="@Url.Content("~/img/git_Raajitha.png")" width="500px" height="400px"><br>
+        <h2>Shwetha</h2>
+        <img src="@Url.Content("~/img/git_Shwetha.png")" width="500px" height="380px"> <br>
+        <h2>Srija</h2>
+        <img src="@Url.Content("~/img/git_Srija.png")" width="500px" height="200px">
+    </div>
+</div>
+
+

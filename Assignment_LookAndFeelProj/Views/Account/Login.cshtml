@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav>
+    <ul>
+        <li><img src="@Url.Content("~/img/logo.png")" alt="Logo"></li>
+        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+        <li><a href="@Url.Action("Index", "Doctor")">Doctors</a></li>
+        <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="row">
+        <div class="col-md-8">
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="ReturnUrl" value="@ViewBag.ReturnUrl" />
+                <h4>Fill in your details below to login</h4>
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Register", "Register", "Account") If you don't have an account.
+                </p>
+            }
+        </div>
+    </div>
+</main>
+
+<script src="@Url.Content("~/js/login.js")"></script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: support@docappointments.com</p>
+            <p>Phone: +1 234 567 8900</p>
+            <p>Address: 123 Health St, Wellness City</p>
+        </div>
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="https://facebook.com">Facebook</a>
+                <a href="https://twitter.com">Twitter</a>
+                <a href="https://instagram.com">Instagram</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+

@@ -1,0 +1,153 @@
+﻿/* appointmentindex.css */
+
+/* Basic styling for the navigation menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    background-color: #56bb8a;
+    padding: 10px;
+    gap: 20px;
+}
+
+nav li {
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    nav li img {
+        padding-left: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+    nav a:hover {
+        color: #b9c0bc;
+    }
+
+nav ul li a.btn:hover {
+    background-color: #56bb8a; /* Darker shade on hover */
+}
+
+nav ul li a.btn.btn-register {
+    background-color: #56bb8a; /* for the 'Register' button */
+}
+
+/* Form styling */
+.form-horizontal {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+/* Reset default button styles */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent; /* Remove background color */
+    padding: 0;
+    font-size: 14px;
+    color: #56bb8a; /* Set text color */
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+/* Extend the upper border */
+.button-container {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Basic Styling for Footer */
+footer {
+    background-color: #56bb8a;
+    color: #333;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-section ul,
+.footer-section p {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-section ul li a,
+    .footer-section {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-section ul li a:hover,
+        .footer-section a:hover {
+            color: #007bff;
+        }

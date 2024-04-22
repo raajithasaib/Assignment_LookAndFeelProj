@@ -1,0 +1,159 @@
+﻿/* login.css */
+
+/* Reset and typography */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+    background-image: url('../img/DoctorAppointment.jpg'); /* Update the relative path to where your image is stored */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    background-color: #56bb8a;
+    padding: 10px;
+    gap: 20px;
+}
+
+nav li {
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    nav li img {
+        padding-left: 20px;
+        height: 40px;
+        width: 40px;
+    }
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+    nav a:hover {
+        color: #56bb8a;
+    }
+
+.row {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+}
+
+    .checkbox input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+/* Styling for login and register buttons */
+.btn-login,
+.btn-register {
+    background-color: #56bb8a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+    .btn-login:hover,
+    .btn-register:hover {
+        background-color: #56bb8a;
+    }
+
+/* Basic Styling for Footer */
+footer {
+    background-color: #56bb8a;
+    color: #333;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.footer-section ul,
+.footer-section p {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-section ul li a,
+    .footer-section {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-section ul li a:hover,
+        .footer-section a:hover {
+            color: #007bff;
+        }

@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav>
+    <ul>
+        <li><img src="@Url.Content("~/img/logo.png")" alt="Logo"></li>
+        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+        <li><a href="@Url.Action("Index", "Doctor")">Doctors</a></li>
+        <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+        <li><a href="#contact-section">Contact Us</a></li>
+    </ul>
+</nav>
+
+<div class="jumbotron">
+    <h2>Welcome to HealHive</h2>
+    <p class="lead">Where Care Comes First</p>
+    <a href="#contact-section" class="btn btn-primary btn-large">Learn more »</a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Url.Content("~/img/finddoctors.png")" alt="Find Doctors">
+        <h2>Find Doctors</h2>
+        <p>Get the best in health care with the help of our highly qualified doctors. Click the button below to get started.</p>
+        <a class="btn btn-default" href="@Url.Action("Index", "Doctor")">Find Doctors »</a>
+    </div>
+
+    <div class="col-md-4">
+        <img src="@Url.Content("~/img/appointment.jpeg")" alt="Create Appointments">
+        <h2>Create Appointments</h2>
+        <p>Get started! Your appointment is just a few clicks away.</p>
+        <a class="btn btn-default" href="@Url.Action("Index", "Appointment")">Create now »</a>
+    </div>
+
+    <div class="col-md-4">
+        <img src="@Url.Content("~/img/statistics.png")" alt="View Statistics">
+        <h2>View Statistics</h2>
+        <p>Want to know how well we are doing? Check it out yourself.</p>
+        <a class="btn btn-default" href="@Url.Action("Index", "Statistics")">Show Statistics »</a>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+    <main>
+        <div id="contact-section" class="contact-container">
+            @using (Html.BeginForm("Send", "Contact", FormMethod.Post, new { id = "contactForm", @class = "contact-section" }))
+            {
+                <h2>Contact Us</h2>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    @Html.TextBox("name", "", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    @Html.Email("email", "", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    @Html.TextArea("message", "", 4, 20, new { @class = "form-control", required = "required" })
+                </div>
+                <button type="submit" class="btn btn-default">Send Message</button>
+            }
+
+            <div class="contact-details">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@docappointments.com</p>
+                    <p>Phone: +1 234 567 8900</p>
+                    <p>Address: 123 Health St, Wellness City</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</footer>
